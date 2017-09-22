@@ -1,0 +1,77 @@
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: url(../img/header-bg.png) center center no-repeat;
+  background-size: cover;
+  &__nav {
+    margin: 0;
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    z-index: 2;
+    li {
+      list-style: none;
+      margin-right: 80px;
+      a {
+        font-family: $GilroySemibold;
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #8f97a5;
+      }
+    }
+  }
+  .balloon {
+    position: absolute;
+    left: 30%;
+    width: 11%;
+    animation: flying 50s linear infinite;
+  }
+  .clouds {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 300px;
+  }
+  .cloud1 {
+    background: url(../img/clouds.png);
+  }
+  .cloud2 {
+    background: url(../img/clouds2.png);
+  }
+
+}
+@keyframes flying {
+  0% {
+    transform: translate(0px, 20px);
+  }
+  12% {
+    transform: translate(75px, 40px);
+  }
+  25% {
+    transform: translate(150px, 0px);
+  }
+  37% {
+    transform: translate(225px, 40px);
+  }
+  50% {
+    transform: translate(300px, 20px);
+  }
+  63% {
+    transform: translate(225px, 40px);
+  }
+  75% {
+    transform: translate(150px, 0px);
+  }
+  88% {
+    transform: translate(75px, 40px);
+  }
+  100% {
+    transform: translate(0px, 20px);
+  }
+}
+

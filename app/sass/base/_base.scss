@@ -8,7 +8,7 @@ body{
     border: 0;
     font-weight: inherit;
     font-style: inherit;
-    font-family: inherit;
+    font-family: $GilroyRegular;
     text-align: left;
     vertical-align: baseline;
     //font-family: 'Open Sans', sans-serif;
@@ -22,6 +22,7 @@ a {
     text-decoration: none;
     &:hover, &:focus, &:active{
         text-decoration: none;
+        color: inherit;
     }
 }
 

@@ -1,5 +1,27 @@
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
-//@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
-//@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
-//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');
-//@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+$GilroyRegular: 'GilroyRegular';
+$GilroyMedium: 'GilroyMedium';
+$GilroyMediumItalic: 'GilroyMediumItalic';
+$GilroySemibold: 'GilroySemibold';
+$GilroyExtrabold: 'GilroyExtrabold';
+
+@font-face {
+  font-family: 'GilroyRegular';
+  src: url('../fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'GilroyMedium';
+  src: url('../fonts/Gilroy-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'GilroyMediumItalic';
+  src: url('../fonts/Gilroy-MediumItalic.woff') format('woff');
+}
+@font-face {
+  font-family: 'GilroySemibold';
+  src: url('../fonts/Gilroy-Semibold.woff') format('woff');
+}
+@font-face {
+  font-family: 'GilroyExtrabold';
+  src: url('../fonts/Gilroy-Extrabold.woff') format('woff');
+}

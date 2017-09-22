@@ -1,0 +1,62 @@
+.results {
+  position: relative;
+  width: 100%;
+  color: $black;
+  .paragraph {
+    top: 120px;
+    &:before {
+      content: '1';
+    }
+  }
+  .tittle {
+    p {
+      width: 600px;
+    }
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    &--left {
+      position: relative;
+      width: 60%;
+      h3 {
+        font-family: $GilroyMedium;
+        font-size: 24px;
+        &:after {
+          content: '!';
+          color: $red;
+          margin-left: 5px;
+        }
+      }
+      p {
+        font-family: $GilroyRegular;
+        font-size: 14px;
+        color: $darkGrey;
+        b {
+          font-family: $GilroyExtrabold;
+          color: $black;
+        }
+      }
+    }
+    &--right {
+      position: relative;
+      width: 30%;
+      padding: 0;
+      margin: 60px 0 0;
+      li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          width: 50px;
+          object-fit: cover;
+        }
+        p {
+          width:calc(100% - 70px);
+        }
+      }
+    }
+  }
+}
