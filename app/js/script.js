@@ -27,6 +27,7 @@ $(function () {
         var pos = (y += 1) + 'px 0';
         $('.cloud2').css('background-position', pos);
     }, 70);
+
 });
 
 

@@ -2,10 +2,12 @@
   position: relative;
   width: 100%;
   color: $black;
+  overflow: hidden;
+  padding: 50px 0 100px;
   .paragraph {
     top: 120px;
     &:before {
-      content: '1';
+      content: '01';
     }
   }
   .tittle {
@@ -17,9 +19,10 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
     &--left {
       position: relative;
-      width: 60%;
+      width: 55%;
       h3 {
         font-family: $GilroyMedium;
         font-size: 24px;
@@ -41,7 +44,7 @@
     }
     &--right {
       position: relative;
-      width: 30%;
+      width: 40%;
       padding: 0;
       margin: 60px 0 0;
       li {
@@ -49,14 +52,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 30px;
         img {
           width: 50px;
           object-fit: cover;
         }
         p {
-          width:calc(100% - 70px);
+          font-family: $GilroyMedium;
+          font-size: 25px;
+          color: $black;
+          width:calc(100% - 80px);
+          margin: 0;
+          line-height: 25px;
+          span {
+            font-family: $GilroyExtrabold;
+            color: $red;
+            text-transform: uppercase;
+          }
         }
       }
     }
+  }
+
+  .animate-circle {
+    right: -250px;
+    top:50px;
   }
 }
