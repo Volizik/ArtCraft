@@ -1,12 +1,30 @@
 .portfolio {
   position: relative;
+  overflow: hidden;
+  color: $black;
   .animate-circle {
     left: -250px;
     bottom: 50px;
+    p {
+      position: absolute;
+      right: -40%;
+      max-width: 340px;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: $GilroyMedium;
+      font-size: 16px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 15px;
+      }
+    }
   }
   .paragraph {
     top: 150px;
-    left: -30px;
+    left: -20px;
     &:before {
       content: '02';
     }
@@ -18,18 +36,39 @@
   }
 
   &__gallery {
-    height: 800px;
+    min-width: 2000px;
+    width:100%;
+    overflow: hidden;
+    margin-top: 30px;
     margin-left: 70px;
-    display: flex;
-    flex-flow: column wrap;
+    &--scroller {
+      height: 800px;
+      display: flex;
+      flex-flow: column wrap;
+      align-content: flex-start;
+    }
     &--item {
       width: 450px;
       padding: 3px;
       box-sizing: border-box;
+      a {
+        display: block;
+        opacity: .6;
+        transition: .4s;
+        &:hover {
+          opacity: 1;
+          transition: .4s;
+        }
+      }
       img {
         max-width: 100%;
         height: 100%;
       }
+    }
+    &--btn {
+      position: absolute;
+      left: 30px;
+      top: 52%;
     }
   }
 }
