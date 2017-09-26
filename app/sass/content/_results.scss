@@ -3,9 +3,10 @@
   width: 100%;
   color: $black;
   overflow: hidden;
-  padding: 50px 0 120px;
+  padding: 85px 0 100px;
   .paragraph {
     top: 120px;
+    left: -120px;
     &:before {
       content: '01';
     }
@@ -36,6 +37,8 @@
         font-family: $GilroyRegular;
         font-size: 14px;
         color: $darkGrey;
+        line-height: 19px;
+        margin-bottom: 25px;
         b {
           font-family: $GilroyExtrabold;
           color: $black;
@@ -44,9 +47,9 @@
     }
     &--right {
       position: relative;
-      width: 40%;
+      width: 36%;
       padding: 0;
-      margin: 60px 0 0;
+      margin: 70px 0 0;
       li {
         list-style: none;
         display: flex;
@@ -54,16 +57,16 @@
         align-items: center;
         margin-bottom: 30px;
         img {
-          width: 50px;
+          width: 60px;
           object-fit: cover;
         }
         p {
           font-family: $GilroyMedium;
           font-size: 25px;
           color: $black;
-          width:calc(100% - 80px);
+          width:calc(100% - 90px);
           margin: 0;
-          line-height: 25px;
+          line-height: 30px;
           span {
             font-family: $GilroyExtrabold;
             color: $red;

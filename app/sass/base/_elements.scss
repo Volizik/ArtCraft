@@ -85,6 +85,47 @@ $red: #ff5038;
     animation: shadowAnimate linear 2s infinite;
   }
 }
+.red-dot {
+  display: block;
+  position: relative;
+  size: 40px;
+  border-radius: 50%;
+  background-color: #ee4635;
+  @include breakpoint(max-width 1200px) {
+    display: none;
+  }
+  &:before {
+    content: '';
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid #ee4635;
+    background-color: transparent;
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    transition: 1s;
+    animation: small-round 1s linear infinite;
+  }
+  &:after {
+    content: '';
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid #ee4635;
+    background-color: transparent;
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    transition: 1s;
+    animation: big-round 1s linear infinite;
+  }
+}
+
 
 
 @keyframes shadowAnimate {
@@ -99,5 +140,48 @@ $red: #ff5038;
   100% {
     box-shadow: 0 0 50px 10px #cccccc;
     transform: translate(-50%, -50%);
+  }
+}
+@keyframes small-round {
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+@keyframes big-round {
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+@keyframes flying {
+  0% {
+    transform: translate(0px, 20px);
+  }
+  12% {
+    transform: translate(75px, 40px);
+  }
+  25% {
+    transform: translate(150px, 0px);
+  }
+  37% {
+    transform: translate(225px, 40px);
+  }
+  50% {
+    transform: translate(300px, 20px);
+  }
+  63% {
+    transform: translate(225px, 40px);
+  }
+  75% {
+    transform: translate(150px, 0px);
+  }
+  88% {
+    transform: translate(75px, 40px);
+  }
+  100% {
+    transform: translate(0px, 20px);
   }
 }

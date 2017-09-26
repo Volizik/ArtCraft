@@ -13,31 +13,18 @@ $(function () {
     }, 70);
 
     /*slider gallery*/
-
+    var positionSlide = 0;
     $(document).on('click', '.portfolio__gallery--btn', function () {
-        var galleryStatus = $('.portfolio__gallery--scroller').attr('data-status', '1');
-        var pos;
-        if (galleryStatus.data('status') === 1) {
-            setInterval(function () {
-                pos = (x -= 1) + 'px';
-                $('.portfolio__gallery--scroller').css('transform', 'translate('+ pos +')');
-            }, 50);
-            galleryStatus.data('status', '2');
-        } else {
-            $('.portfolio__gallery--scroller').css('transform', 'translate('+ 0 +')');
-            galleryStatus.data('status', '1');
-            return false;
-        }
-
+        positionSlide = positionSlide - 430;
+        $('.portfolio__gallery--scroller').css({'transform': 'translate('+ positionSlide +'px, 0)'});
     });
 
     $('.blog__slider').slick({
         dots:false,
-        slidesToShow: 5,
+        slidesToShow: 4,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
-
         responsive: [
             {
                 breakpoint: 768,
@@ -60,6 +47,79 @@ $(function () {
         ]
     });
 
+
+    $('.brief__col input[type="text"]').unbind().blur( function(){
+
+        var id = $(this).attr('id');
+        var val = $(this).val();
+
+        switch(id) {
+            // Проверка поля "Имя"
+            case 'name':
+                var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+                if (val.length > 2 && val != '' && rv_name.test(val)) {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').addClass('correctly')
+                        .css('color','transparent')
+                        .animate({'paddingLeft':'20px'},400)
+                        .animate({'paddingLeft':'10px'},400);
+                    $(this).css({
+                        'color': '#272e34',
+                        'border-bottom-color': '#ccc'
+                    })
+                } else {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html('*').removeClass('correctly')
+                        .css('color', 'red')
+                        .animate({'paddingLeft':'20px'},400)
+                        .animate({'paddingLeft':'10px'},400);
+                    $(this).css({
+                        'color': 'red',
+                        'border-bottom-color': '#eb4534'
+                    })
+                }
+                break;
+
+            // Проверка email
+            case 'phone':
+                var rv_phone = /^[0-9]+$/;
+                if (val != '' && rv_phone.test(val)) {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').addClass('correctly')
+                        .css('color','transparent')
+                        .animate({'paddingLeft':'10px'},400)
+                        .animate({'paddingLeft':'5px'},400);
+                    $(this).css({
+                        'color': '#272e34',
+                        'border-bottom-color': '#ccc'
+                    })
+                } else {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html('*').removeClass('correctly')
+                        .css('color', 'red')
+                        .animate({'paddingLeft':'20px'},400)
+                        .animate({'paddingLeft':'10px'},400);
+                    $(this).css({
+                        'color': 'red',
+                        'border-bottom-color': '#eb4534'
+                    })
+                }
+                break;
+        } // end switch(...)
+    }); // end blur()
+    /* close contacts validation*/
+
+
+    $(document).on("click", ".header__nav a", function() {
+        event.preventDefault();
+        var t = $(this).attr("href"),
+            e = $(t),
+            a = e.offset().top;
+        return $("html,body").animate({
+            scrollTop: a
+        })
+    })
 
 });
 

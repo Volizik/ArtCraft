@@ -3,30 +3,64 @@
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  background: url(../img/header-bg.png) center center no-repeat;
+  background: url(../img/header-bg.png) center top no-repeat;
   background-size: cover;
   &__nav {
     margin: 0;
     padding: 50px 0;
     position: relative;
     display: flex;
+    align-content: center;
     z-index: 2;
     li {
       list-style: none;
       margin-right: 80px;
+      align-items: center;
+      &:first-of-type {
+        margin-right: 50px;
+      }
       a {
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        align-items: center;
         font-family: $GilroySemibold;
         font-size: 18px;
         color: #fff;
         text-transform: uppercase;
         text-shadow: 0 0 10px #8f97a5;
+        span {
+          display: block;
+          height: 2px;
+          width: 20px;
+          margin-top: 5px;
+          background-color: #fff;
+          &:before {
+            content:'';
+            display: block;
+            position: relative;
+            margin: 5px 0 3px;
+            height: 2px;
+            width: 20px;
+            background-color: #fff;
+          }
+          &:after {
+            content:'';
+            display: block;
+            position: relative;
+            margin: 3px 0;
+            height: 2px;
+            width: 20px;
+            background-color: #fff;
+          }
+        }
       }
     }
   }
   .balloon {
     position: absolute;
     left: 30%;
-    width: 11%;
+    width: 15%;
     animation: flying 50s linear infinite;
   }
   .clouds {
@@ -44,34 +78,5 @@
     background: url(../img/clouds2.png);
   }
 
-}
-@keyframes flying {
-  0% {
-    transform: translate(0px, 20px);
-  }
-  12% {
-    transform: translate(75px, 40px);
-  }
-  25% {
-    transform: translate(150px, 0px);
-  }
-  37% {
-    transform: translate(225px, 40px);
-  }
-  50% {
-    transform: translate(300px, 20px);
-  }
-  63% {
-    transform: translate(225px, 40px);
-  }
-  75% {
-    transform: translate(150px, 0px);
-  }
-  88% {
-    transform: translate(75px, 40px);
-  }
-  100% {
-    transform: translate(0px, 20px);
-  }
 }
 
