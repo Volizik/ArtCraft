@@ -12,8 +12,20 @@
     }
   }
   .tittle {
+    @include breakpoint(max-width 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
     p {
       width: 600px;
+      @include breakpoint(max-width 1200px) {
+        width: 450px;
+        margin: 0;
+      }
+      @include breakpoint(max-width 992px) {
+        max-width: 600px;
+        width: auto;
+      }
     }
   }
   &__content {
@@ -21,12 +33,24 @@
     display: flex;
     justify-content: space-between;
     z-index: 2;
+    @include breakpoint(max-width 992px) {
+      flex-direction: column;
+    }
     &--left {
       position: relative;
       width: 55%;
+      @include breakpoint(max-width 1200px) {
+        margin-top: 45px;
+      }
+      @include breakpoint(max-width 992px) {
+        width: 100%;
+      }
       h3 {
         font-family: $GilroyMedium;
         font-size: 24px;
+        @include breakpoint(max-width 400px) {
+          font-size: 17px;
+        }
         &:after {
           content: '!';
           color: $red;
@@ -50,6 +74,9 @@
       width: 36%;
       padding: 0;
       margin: 70px 0 0;
+      @include breakpoint(max-width 992px) {
+        width: 100%;
+      }
       li {
         list-style: none;
         display: flex;
@@ -67,6 +94,10 @@
           width:calc(100% - 90px);
           margin: 0;
           line-height: 30px;
+          @include breakpoint(max-width 400px) {
+            font-size: 18px;
+            line-height: 24px;
+          }
           span {
             font-family: $GilroyExtrabold;
             color: $red;
@@ -80,5 +111,8 @@
   .animate-circle {
     right: -250px;
     top:50px;
+    @include breakpoint(max-width 992px) {
+      display: none;
+    }
   }
 }

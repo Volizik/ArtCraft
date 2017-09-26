@@ -5,6 +5,10 @@
   height: 100%;
   background: url(../img/header-bg.png) center top no-repeat;
   background-size: cover;
+  overflow: hidden;
+  @include breakpoint(max-width 700px) {
+    min-height: 70vh;
+  }
   &__nav {
     margin: 0;
     padding: 50px 0;
@@ -12,6 +16,29 @@
     display: flex;
     align-content: center;
     z-index: 2;
+    @include breakpoint(max-width 700px) {
+      display: none;
+      flex-flow: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      background-color: rgba(0,0,0, .6);
+      z-index: 10;
+      li {
+        position: relative;
+        margin-right: 0 !important;
+        margin-bottom: 30px;
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
     li {
       list-style: none;
       margin-right: 80px;
@@ -57,6 +84,58 @@
       }
     }
   }
+  &__mobile-btn {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 35px;
+    background-color: #cccccc;
+    box-shadow: 0 0 20px 0 #000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 11;
+    @include breakpoint(max-width 700px) {
+      display: block;
+    }
+    span, span:before, span:after {
+      display: block;
+      position: relative;
+      height: 2px;
+      width: 18px;
+      background-color: #fff;
+      left: 50%;
+      margin-left: -9px;
+      top: 50%;
+      margin-top: -1px;
+    }
+    span:before {
+      position: absolute;
+      transition: all 0.2s;
+      margin-top: -6px;
+      content: '';
+    }
+    span:after {
+      position: absolute;
+      transition: all 0.2s;
+      margin-top: 4px;
+      content: '';
+    }
+    &--active span {
+      background-color: transparent;
+      &:before {
+        transform: rotate(135deg);
+        margin-top: 0;
+      }
+      &:after {
+        transform: rotate(-134deg);
+        margin-top: 0;
+      }
+    }
+  }
+
+
   .balloon {
     position: absolute;
     left: 30%;
@@ -70,6 +149,9 @@
     width: 100%;
     bottom: 0;
     height: 300px;
+    @include breakpoint(max-width 700px) {
+      height: 200px;
+    }
   }
   .cloud1 {
     background: url(../img/clouds.png);
@@ -79,4 +161,5 @@
   }
 
 }
+
 

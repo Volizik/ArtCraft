@@ -118,8 +118,16 @@ $(function () {
             a = e.offset().top;
         return $("html,body").animate({
             scrollTop: a
-        })
-    })
+        }, 1e3),
+            !1
+    });
+
+
+
+    $(document).on('click', '.header__mobile-btn', function () {
+        $('.header__mobile-btn').toggleClass('header__mobile-btn--active');
+        $('.header__nav').slideToggle().css('display', 'flex');
+    });
 
 });
 

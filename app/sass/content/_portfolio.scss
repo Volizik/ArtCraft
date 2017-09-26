@@ -5,6 +5,9 @@
   .animate-circle {
     left: -250px;
     bottom: 50px;
+    @include breakpoint(max-width 1400px) {
+      display: none;
+    }
     p {
       position: absolute;
       right: -40%;
@@ -17,6 +20,12 @@
       margin: 0;
       display: flex;
       align-items: center;
+      @include breakpoint(max-width 1750px) {
+        right: -100px;
+      }
+      @include breakpoint(max-width 1600px) {
+        display: none;
+      }
       img {
         margin-right: 15px;
       }
