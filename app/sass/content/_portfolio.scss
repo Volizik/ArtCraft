@@ -50,17 +50,34 @@
     overflow: hidden;
     margin-top: 30px;
     margin-left: 70px;
+    @include breakpoint(max-width 992px) {
+      min-width: 100%;
+      margin-left: 0;
+    }
     &--scroller {
       height: 800px;
       display: flex;
       flex-flow: column wrap;
       align-content: flex-start;
       transition: .5s;
+      @include breakpoint(max-width 992px) {
+        display: block;
+        columns: 2;
+        column-gap: 2px;
+        height: auto;
+        transform: translate(0px, 0px)!important;
+      }
+      @include breakpoint(max-width 750px) {
+        columns: 1!important;
+      }
     }
     &--item {
       width: 450px;
       padding: 3px;
       box-sizing: border-box;
+      @include breakpoint(max-width 992px) {
+        width: 100%;
+      }
       a {
         display: block;
         opacity: .6;
@@ -75,12 +92,18 @@
         height: 100%;
         display: block;
         margin: 0 auto;
+        @include breakpoint(max-width 992px) {
+          height: auto;
+        }
       }
     }
     &--btn {
       position: absolute;
       left: 30px;
       top: 52%;
+      @include breakpoint(max-width 992px) {
+        display: none;
+      }
     }
   }
 }

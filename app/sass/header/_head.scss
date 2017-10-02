@@ -7,7 +7,7 @@
   background-size: cover;
   overflow: hidden;
   @include breakpoint(max-width 700px) {
-    min-height: 70vh;
+    min-height: 57vh;
   }
   &__nav {
     margin: 0;

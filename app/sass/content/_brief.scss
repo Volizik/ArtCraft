@@ -17,6 +17,9 @@
   .animate-circle {
     top: 100px;
     right: -250px;
+    @include breakpoint(max-width 1550px) {
+      display: none;
+    }
   }
   .balloon {
     position: absolute;
@@ -24,6 +27,14 @@
     left: 200px;
     animation: flying 50s linear infinite;
     z-index: 2;
+    @include breakpoint(max-width 1250px) {
+      left: auto;
+      right: 40% ;
+      bottom: 100px;
+    }
+    @include breakpoint(max-width 600px) {
+      width: 200px;
+    }
   }
   >p {
     color: $black;
@@ -32,12 +43,27 @@
     font-size: 44px;
     text-transform: uppercase;
     bottom: 300px;
-    left: 50%;
-    transform: translateX(-40%);
+    right: 300px;
+    @include breakpoint(max-width 1250px) {
+      right: auto;
+      left: 20px;
+      top: 750px;
+    }
+    @include breakpoint(max-width 930px) {
+      font-size: 27px;
+    }
+    @include breakpoint(max-width 600px) {
+      bottom: 400px;
+      top: auto;
+    }
     span {
       display: block;
       font-family: $GilroyExtrabold;
       font-size: 65px;
+      @include breakpoint(max-width 930px) {
+        font-size: 40px;
+
+      }
     }
   }
   .red-dot {
@@ -49,6 +75,9 @@
       left: 50%;
       width: 1px;
       background-color: #f4dedc;
+      @include breakpoint(max-width 1550px) {
+        display: none;
+      }
     }
   }
 
@@ -68,6 +97,9 @@
     width: 65%;
     float: left;
     margin-top: 80px;
+    @include breakpoint(max-width 1200px) {
+      width: 100%;
+    }
     input,
     textarea {
       font-family: $GilroySemibold;
@@ -93,9 +125,12 @@
       color: #c5c7c6;
       display: inline-block;
       width: calc(100% - 200px);
-      @include breakpoint(max-width 600px) {
+      @include breakpoint(max-width 755px) {
         padding-left: 5%;
         box-sizing: border-box;
+      }
+      @include breakpoint(max-width 755px) {
+        width: 100%;
       }
       b {
         font-size: 20px;
@@ -185,13 +220,22 @@
       font-weight: 700;
       text-transform: uppercase;
       padding: 15px 30px;
+      @include breakpoint(max-width 500px) {
+        margin: 30px auto 0;
+        float: none;
+      }
     }
-    a {
+    label[for="file"] {
       font-family: $GilroyRegular;
       font-size: 14px;
       color: #c5c7c6;
       display: inline-block;
       text-decoration: underline;
+      @include breakpoint(max-width 755px) {
+        display: block!important;
+        margin-top: 20px;
+        text-align: center;
+      }
     }
   }
   &__text {
@@ -200,6 +244,9 @@
     align-items: center;
     align-content: center;
     justify-content: space-between;
+    @include breakpoint(max-width 1200px) {
+      display: none;
+    }
     &:nth-of-type(2) {
       top: 50px;
       right: 100px;

@@ -32,15 +32,6 @@ $(function () {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
                     slidesToShow: 1
                 }
             }
@@ -128,6 +119,55 @@ $(function () {
         $('.header__mobile-btn').toggleClass('header__mobile-btn--active');
         $('.header__nav').slideToggle().css('display', 'flex');
     });
+
+
+    $('.tittle span').addClass('animated').css('opacity', '0');
+    $('.tittle h2').addClass('animated').css('opacity', '0');
+
+    if(window.innerWidth> 800) {
+        $(window).scroll(function () {
+            $('.tittle span').each(function () {
+                var imgPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if(imgPos < topOfWindow + 500) {
+                    $(this).addClass('fadeInLeft').css('opacity', '1');
+                }
+            })
+        });
+        $(window).scroll(function () {
+            $('.tittle h2').each(function () {
+                var imgPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if(imgPos < topOfWindow + 500) {
+                    $(this).addClass('fadeInRight').css('opacity', '1');
+                }
+            })
+        });
+    } else {
+        $(window).scroll(function () {
+            $('.tittle span').each(function () {
+                var imgPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if(imgPos < topOfWindow + 400) {
+                    $(this).addClass('fadeInLeft').css('opacity', '1');
+                }
+            })
+        });
+        $(window).scroll(function () {
+            $('.tittle h2').each(function () {
+                var imgPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if(imgPos < topOfWindow + 400) {
+                    $(this).addClass('fadeInRight').css('opacity', '1');
+                }
+            })
+        });
+    }
+
+
+
+
+
 
 });
 
