@@ -19,7 +19,7 @@ $(function () {
         $('.portfolio__gallery--scroller').css({'transform': 'translate('+ positionSlide +'px, 0)'});
     });
 
-    $('.blog__slider').slick({
+    $('.blog__slider--wrap').slick({
         dots:false,
         slidesToShow: 4,
         infinite: true,
@@ -103,14 +103,17 @@ $(function () {
 
 
     $(document).on("click", ".header__nav a", function() {
-        event.preventDefault();
-        var t = $(this).attr("href"),
-            e = $(t),
-            a = e.offset().top;
-        return $("html,body").animate({
-            scrollTop: a
-        }, 1e3),
-            !1
+        var href = $(this).attr('href');
+        if(~href.indexOf('#')) {
+            event.preventDefault();
+            var t = $(this).attr("href"),
+                e = $(t),
+                a = e.offset().top;
+            return $("html,body").animate({
+                scrollTop: a
+            }, 1e3),
+                !1
+        }
     });
 
 

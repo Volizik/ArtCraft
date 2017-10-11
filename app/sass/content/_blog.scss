@@ -16,13 +16,15 @@
     }
   }
   &__slider {
-    margin-top: 30px;
-    margin-left: 70px;
-    @include breakpoint(max-width 768px) {
-      margin: 0;
-      .slick-list {
-        padding: 30px 0!important;
-        width: auto!important;
+    &--wrap {
+      margin-top: 30px;
+      margin-left: 70px;
+      @include breakpoint(max-width 768px) {
+        margin: 0;
+        .slick-list {
+          padding: 30px 0!important;
+          width: auto!important;
+        }
       }
     }
     &--slide {
