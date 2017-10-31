@@ -7,9 +7,9 @@
   .paragraph {
     top: 120px;
     left: -120px;
-    &:before {
-      content: '01';
-    }
+    //&:before {
+    //  content: '01';
+    //}
   }
   .tittle {
     @include breakpoint(max-width 992px) {
@@ -107,12 +107,12 @@
       }
     }
   }
-
   .animate-circle {
-    right: -250px;
+    right: -500px;
     top:50px;
-    @include breakpoint(max-width 992px) {
-      display: none;
-    }
+    //@include breakpoint(max-width 992px) {
+    //  display: none;
+    //}
   }
+
 }

@@ -17,7 +17,8 @@ $red: #ff5038;
     display: none;
   }
   &:before {
-    content: '';
+    counter-increment: counter;
+    content: '0' counter(counter);
     position: absolute;
     left: -80px;
   }
@@ -109,10 +110,9 @@ $red: #ff5038;
     border-radius: 50%;
     top: 50%;
     left: 50%;
-
+    transform: translate(-50%, -50%);
     box-shadow: 0 0 50px 10px #cccccc;
     background-color: #fff;
-    animation: shadowAnimate linear 2s infinite;
   }
 }
 .red-dot {
@@ -157,21 +157,6 @@ $red: #ff5038;
 }
 
 
-
-@keyframes shadowAnimate {
-  0% {
-    box-shadow: 0 0 50px 10px #cccccc;
-    transform: translate(-50%, -50%);
-  }
-  50% {
-    box-shadow: 0 0 180px 40px #cccccc;
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-  100% {
-    box-shadow: 0 0 50px 10px #cccccc;
-    transform: translate(-50%, -50%);
-  }
-}
 @keyframes small-round {
   100% {
     width: 60px;

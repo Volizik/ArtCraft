@@ -11,6 +11,7 @@ body{
     font-family: $GilroyRegular;
     text-align: left;
     vertical-align: baseline;
+    counter-reset: counter;
     //font-family: 'Open Sans', sans-serif;
     //font-family: 'PT Sans', sans-serif;
     //font-family: 'Roboto', sans-serif;

@@ -1,5 +1,18 @@
+
+.inside-blog-brief {
+  .paragraph {
+    //&:before {
+    //  content: '02';
+    //}
+  }
+}
 .inside-blog {
   padding-top: 100px;
+  .paragraph {
+    //&:before {
+    //  content: '01';
+    //}
+  }
   .blog__slider .tittle {
     margin-left: 70px;
     margin-top: 30px;
