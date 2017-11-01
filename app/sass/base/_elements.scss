@@ -59,7 +59,7 @@ $red: #ff5038;
     text-transform: uppercase;
     z-index: 2;
     margin-top: 0px;
-    padding-top: 25px;
+    padding-top: 30px;
     @include breakpoint(max-width 992px) {
       margin-left: 0;
       width: 100%;
@@ -85,9 +85,10 @@ $red: #ff5038;
     }
   }
   p {
-    font-family: $GilroyMediumItalic;
+    font-family: $GilroyRegular;
     font-size: 16px;
     color: $darkGrey;
+    font-style: italic;
     @include breakpoint(max-width 992px) {
       display: block;
       width: 100%!important;

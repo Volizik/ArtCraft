@@ -152,7 +152,7 @@
       font-family: $GilroyExtrabold;
       text-transform: uppercase;
       color: $red;
-      font-size: 14px;
+      font-size: 16px;
       @include breakpoint(max-width 600px) {
         padding-left: 5%;
         box-sizing: border-box;
@@ -194,9 +194,9 @@
         }
       }
     }
-    input[type="radio"] {
+    input[type="radio"],
+    input[type="file"]{
       display: none;
-
     }
     input[type="radio"]:checked + label span {
       &:before {
@@ -210,7 +210,7 @@
       display: block;
       position: relative;
       float: left;
-      margin: 120px 30px 0 0;
+      margin: 60px 30px 0 0;
       background-color: $red;
       border: none;
       border-radius: 30px;
@@ -225,14 +225,17 @@
         float: none;
       }
     }
-    label[for="file"] {
+    label[for="add-file"] {
+      position: relative;
       font-family: $GilroyRegular;
       font-size: 14px;
       color: #c5c7c6;
       display: inline-block;
       text-decoration: underline;
+      width: auto;
+      cursor: pointer;
       @include breakpoint(max-width 755px) {
-        display: block!important;
+        display: inline-block!important;
         margin-top: 20px;
         text-align: center;
       }

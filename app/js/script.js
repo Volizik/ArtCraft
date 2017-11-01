@@ -169,6 +169,29 @@ $(function () {
 
 
 
+    var elem = document.querySelector('.results .animate-circle');
+    var container = document.querySelector('.results .container');
+    var elemStyle = getComputedStyle(elem);
+    var elr1 = elemStyle.right;
+
+
+    window.onresize = function (e) {
+
+        var elemPos = elem.getBoundingClientRect();
+        var containerPos = container.getBoundingClientRect();
+        var side = containerPos.right - elemPos.left;
+        var elr = parseInt(elemStyle.right);
+        var raznica = containerPos.right - elemPos.left;
+
+        if (raznica >= 0) {
+            elem.style.right = elr - side + 'px';
+        } else {
+            elem.style.right = elr1;
+            return
+        }
+
+    };
+
 
 
 
