@@ -3,11 +3,11 @@
   overflow: hidden;
   color: $black;
   .animate-circle {
-    left: -450px;
+    left: -250px;
     bottom: 50px;
-    //@include breakpoint(max-width 1400px) {
-    //  display: none;
-    //}
+    @include breakpoint(max-width 1400px) {
+      display: none;
+    }
     p {
       position: absolute;
       right: -40%;
@@ -108,10 +108,11 @@
     &--btn {
       height: 80px;
       width: 80px;
-      overflow: hidden;
+      margin: 10px 0;
+      cursor: pointer;
       img {
         width: 80px;
-        filter: drop-shadow(5px 5px 10px #111)
+        filter: drop-shadow(10px 10px 8px #111)
       }
       @include breakpoint(max-width 992px) {
         display: none;

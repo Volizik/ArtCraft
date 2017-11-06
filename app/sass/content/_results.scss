@@ -110,9 +110,9 @@
   .animate-circle {
     right: -250px;
     top:50px;
-    //@include breakpoint(max-width 992px) {
-    //  display: none;
-    //}
+    @include breakpoint(max-width 1650px) {
+      display: none;
+    }
   }
 
 }

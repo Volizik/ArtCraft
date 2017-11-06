@@ -14,9 +14,15 @@ $(function () {
 
     /*slider gallery*/
     var positionSlide = 0;
-    $(document).on('click', '.portfolio__gallery--btn', function () {
+    $(document).on('click', '.btn-right', function () {
         positionSlide = positionSlide - 430;
         $('.portfolio__gallery--scroller').css({'transform': 'translate('+ positionSlide +'px, 0)'});
+    });
+    $(document).on('click', '.btn-left', function () {
+        if (positionSlide !== 0) {
+            positionSlide = positionSlide + 430;
+            $('.portfolio__gallery--scroller').css({'transform': 'translate('+ positionSlide +'px, 0)'});
+        }
     });
 
     $('.blog__slider--wrap').slick({
@@ -169,28 +175,27 @@ $(function () {
 
 
 
-    var elem = document.querySelector('.results .animate-circle');
-    var container = document.querySelector('.results .container');
-    var elemStyle = getComputedStyle(elem);
-    var elr1 = elemStyle.right;
+    // var elem = document.querySelector('.results .animate-circle');
+    // var container = document.querySelector('.results .container');
+    // var elemStyle = getComputedStyle(elem);
+    // var elr1 = elemStyle.right;
 
 
-    window.onresize = function (e) {
-
-        var elemPos = elem.getBoundingClientRect();
-        var containerPos = container.getBoundingClientRect();
-        var side = containerPos.right - elemPos.left;
-        var elr = parseInt(elemStyle.right);
-        var raznica = containerPos.right - elemPos.left;
-
-        if (raznica >= 0) {
-            elem.style.right = elr - side + 'px';
-        } else {
-            elem.style.right = elr1;
-            return
-        }
-
-    };
+    // window.onresize = function (e) {
+    //
+    //     var elemPos = elem.getBoundingClientRect();
+    //     var containerPos = container.getBoundingClientRect();
+    //     var side = containerPos.right - elemPos.left;
+    //     var elr = parseInt(elemStyle.right);
+    //     var raznica = containerPos.right - elemPos.left;
+    //
+    //     if (raznica >= 0) {
+    //         elem.style.right = elr - side + 'px';
+    //     } else if (parseInt(elemStyle.right) !== -250) {
+    //         elem.style.right = elr1;
+    //     }
+    //
+    // };
 
 
 
